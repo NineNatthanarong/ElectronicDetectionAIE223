@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Box, Download, Trash2, Loader2 } from 'lucide-react'
 import { Detection } from '../types'
 
 interface ResultsPanelProps {
@@ -18,12 +17,6 @@ const ResultsPanel = ({ detections, annotatedImage, isProcessing, onClear }: Res
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-  }
-
-  const getConfidenceColor = (conf: number) => {
-    if (conf >= 0.8) return 'bg-green-500'
-    if (conf >= 0.5) return 'bg-yellow-500'
-    return 'bg-red-500'
   }
 
   return (

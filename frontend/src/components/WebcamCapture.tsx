@@ -1,5 +1,4 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { Camera, Play, Square, Loader2, AlertCircle } from 'lucide-react'
 import { Detection, PredictionResponse } from '../types'
 
 interface WebcamCaptureProps {

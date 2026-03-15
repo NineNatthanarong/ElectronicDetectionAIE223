@@ -1,6 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Upload, Loader2, ImagePlus, X } from 'lucide-react'
 import { Detection, PredictionResponse } from '../types'
 
 interface ImageUploadProps {
