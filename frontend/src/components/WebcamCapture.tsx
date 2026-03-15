@@ -10,7 +10,7 @@ interface WebcamCaptureProps {
   setIsProcessing: (processing: boolean) => void
 }
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 const WebcamCapture = ({ confidence, setDetections, setAnnotatedImage, isProcessing, setIsProcessing }: WebcamCaptureProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
