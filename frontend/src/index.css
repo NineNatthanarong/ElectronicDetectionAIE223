@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #1a1612;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Retro grid paper background */
+.retro-bg {
+  background-color: #f5e6d3;
+  background-image: 
+    linear-gradient(#d4c4b0 1px, transparent 1px),
+    linear-gradient(90deg, #d4c4b0 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+.retro-dark-bg {
+  background-color: #2a2520;
+  background-image: 
+    linear-gradient(#3d3530 1px, transparent 1px),
+    linear-gradient(90deg, #3d3530 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* CRT Monitor frame style */
+.crt-frame {
+  background: #1a1612;
+  border: 12px solid #4a433c;
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 60px rgba(0, 0, 0, 0.5),
+    0 0 0 4px #2a2520,
+    0 0 0 8px #5a534c,
+    0 20px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.crt-frame::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, #6a635c, #3a3530);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.crt-screen {
+  background: #0a0a08;
+  border: 2px solid #1a1612;
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Paper card style */
+.paper-card {
+  background: #faf6f1;
+  border: 2px solid #d4c4b0;
+  border-radius: 4px;
+  box-shadow: 
+    0 4px 0 #c4b4a0,
+    0 6px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.paper-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -12px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Tape button style */
+.tape-button {
+  background: #e8d5c0;
+  border: 2px solid #c4b4a0;
+  border-radius: 2px;
+  padding: 8px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4a433c;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow: 0 3px 0 #b4a490;
+}
+
+.tape-button:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 #b4a490;
+  background: #f0e0d0;
+}
+
+.tape-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #b4a490;
+}
+
+.tape-button.active {
+  background: #ff8c42;
+  border-color: #e07020;
+  color: white;
+  box-shadow: 0 3px 0 #d06010;
+}
+
+.tape-button.active:hover {
+  background: #ff9c52;
+  box-shadow: 0 2px 0 #d06010;
+}
+
+/* Hand-drawn border */
+.sketch-border {
+  border: 2px solid #4a433c;
+  border-radius: 2px 8px 4px 12px;
+  position: relative;
+}
+
+.sketch-border::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #4a433c;
+  border-radius: 4px 2px 8px 4px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Doodle underline */
+.doodle-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.doodle-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ff8c42;
+  border-radius: 2px;
+  transform: rotate(-1deg);
+}
+
+/* Range slider - retro style */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #d4c4b0;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #c4b4a0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ff8c42;
+  height: 24px;
+  width: 16px;
+  border-radius: 2px;
+  border: 2px solid #e07020;
+  margin-top: -9px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-track {
+  background: #d4c4b0;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #c4b4a0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #ff8c42;
+  height: 24px;
+  width: 16px;
+  border-radius: 2px;
+  border: 2px solid #e07020;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar - retro */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8d5c0;
+  border: 1px solid #d4c4b0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b4a0;
+  border: 2px solid #e8d5c0;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b4a490;
+}
+
+/* Sticker/label style */
+.label-tag {
+  background: #ff8c42;
+  color: white;
+  padding: 4px 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  display: inline-block;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.label-tag.alt {
+  background: #4a433c;
+  transform: rotate(1deg);
+}
+
+/* Processing indicator - retro */
+.processing-led {
+  width: 12px;
+  height: 12px;
+  background: #ff4444;
+  border-radius: 50%;
+  border: 2px solid #cc3333;
+  box-shadow: 0 0 8px #ff4444;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.processing-led.active {
+  background: #44ff44;
+  border-color: #33cc33;
+  box-shadow: 0 0 8px #44ff44;
+}
+
+/* Coordinates display */
+.coords-display {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #ff8c42;
+  background: #1a1612;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* Grid overlay for images */
+.grid-overlay {
+  background-image: 
+    linear-gradient(rgba(255, 140, 66, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 140, 66, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Old styles removed - replaced with retro theme */
