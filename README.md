@@ -1,66 +1,34 @@
-# YOLO Detection WebApp
+# 🎯 โปรเจคตรวจจับวัตถุด้วย YOLO - วิชา AIE223
 
-Object detection web application with YOLOv8 backend (Python/Flask) and React frontend.
+เว็บแอปตรวจจับวัตถุด้วย YOLOv8
 
-## Quick Deploy (1 Command)
+## 🚀 วิธีรัน
 
-```bash
-cd /Users/nine/Documents/Electronic_Parts/yolo-detection-webapp
-./deploy.sh
-```
-
-Or manually:
 ```bash
 docker-compose up --build -d
 ```
 
-## Access
+## 🌐 เข้าใช้งาน
 
-- **Frontend**: http://localhost
-- **Backend API**: http://localhost:5001
+- **หน้าเว็บ**: http://localhost
+- **API**: http://localhost:5001
 
-## Development
+## 📋 คำสั่ง
 
-### Backend Only
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py
-```
+| คำสั่ง | ความหมาย |
+|--------|----------|
+| `docker-compose up --build -d` | รันระบบ |
+| `docker-compose down` | หยุดระบบ |
+| `docker-compose logs -f` | ดู log |
 
-### Frontend Only
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-## Architecture
-
-- **Backend**: Flask + YOLOv8 + OpenCV (Port 5000/5001)
-- **Frontend**: React + Vite + Tailwind (Port 80 via nginx)
-- **Proxy**: nginx routes `/api/*` to backend
-
-## Docker Structure
+## � โครงสร้าง
 
 ```
-yolo-detection-webapp/
-├── backend/
-│   ├── Dockerfile
-│   ├── app.py
-│   ├── best.pt
-│   └── requirements.txt
-├── frontend/
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   └── ...
+├── backend/      # Flask + YOLOv8
+├── frontend/     # React + Vite
 └── docker-compose.yml
 ```
 
-## Commands
+---
 
-| Command | Description |
-|---------|-------------|
-| `./deploy.sh` | Build and start all services |
-| `docker-compose down` | Stop all services |
-| `docker-compose logs -f` | View logs |
+**วิชา AIE223** 🎓
