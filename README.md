@@ -1,6 +1,6 @@
 # 🎯 โปรเจคตรวจจับวัตถุด้วย YOLO - วิชา AIE223
 
-เว็บแอปตรวจจับวัตถุด้วย YOLOv8
+เว็บแอปตรวจจับวัตถุด้วย YOLO26
 
 ## 🚀 วิธีรัน
 
@@ -24,7 +24,7 @@ docker-compose up --build -d
 ## � โครงสร้าง
 
 ```
-├── backend/      # Flask + YOLOv8
+├── backend/      # Flask + YOLO
 ├── frontend/     # React + Vite
 └── docker-compose.yml
 ```
